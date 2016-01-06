@@ -11,6 +11,6 @@ Creating a new branch is quick AND simple.
 >>>>>>> featurel
 test for --no -ff
 add new line
-
+fix bug 101
 
 
