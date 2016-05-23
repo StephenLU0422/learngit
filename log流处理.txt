@@ -1,0 +1,8 @@
+给hbase和strom它们使用不同的groupid就可以消费同一份数据，flume节点在kafka汇总，
+后期修改方便，不用直接修改flume。kafka比flume稳定性好。使用strom处理的业务不是很复杂。
+使用这个架构，后期flume处理其他业务数据也可以。侧重于平台的搭建，业务不是很复杂。
+使用flume的source组件，log4j与flume整合时，需要Avrosource；channel使用mapchannel，flume与kafka整合sink可使用kafkasink（flume1.6），可手工指定kafkasink
+kafka将flume收集的日志收集到kafka集群。
+strom的数据源spout从kafka消费数据，使用官方插件kafkaspot消费kafka队列的数据。
+strom写到MySQL可用jdbc，用myDbUtils。
+hbaseConsumer可用hbaseUtils消费kafka数据。
